@@ -1,0 +1,8 @@
+#!/bin/bash
+rm *.gif
+
+for name in `find . -name "*.png"`
+do convert $name $name".gif";
+done
+
+gifsicle --delay 4 -O --colors 256 --loop *.gif > ../out.gif
